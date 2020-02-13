@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hangman</title>
+
+    <link rel="stylesheet" href="normalize2.css" />
+    <link rel="stylesheet" href="hangman.css" />
+  </head>
+
+  <body>
+    
+    <div class="wrapper">
+      <div>
+        <button class="button" onclick=" loadWord()">Get word</button>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div id="wordContainer">
+        <div id="word"></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrapper">
+        <form onsubmit="wordGuess(); return false;" autocomplete="off">
+          Guess a letter: <input id="form" type="text" size="1" />
+          <input type="submit" />
+        </form>
+      </div>
+    </section>
+
+    <section id="bottom" class="wrapper">
+      <img id="firstTime" src="first time.png" alt="firsttime" />
+      <svg height="300" width="300">
+        <polygon
+          id="hanger1"
+          points="300,300 40,300 40,280 300,280 300,300 "
+          style="fill:rgb(224, 172, 26);stroke:purple;stroke-width: 1;"
+        />
+        <polygon
+          id="hanger2"
+          points="230,280 230,0 250,0 250,280"
+          style="fill:rgb(224, 172, 26);stroke:purple;stroke-width: 1;"
+        />
+        <polygon
+          id="hanger3"
+          points="230,0 120,0 120,20 230,20"
+          style="fill:rgb(224, 172, 26);stroke:purple;stroke-width: 1;"
+        />
+        <polygon
+          id="hanger4"
+          points="143,20 143,50 150,50 150,20"
+          style="fill:rgb(224, 172, 26);stroke:purple;stroke-width: 1;"
+        />
+        <ellipse
+          id="hanger5"
+          cx="146"
+          cy="67"
+          rx="10"
+          ry="15"
+          style="fill:transparent;stroke: rgb(224, 172, 26);stroke-width: 5;"
+        />
+        <circle
+          id="miss1"
+          cx="146"
+          cy="67"
+          r="20"
+          stroke="black"
+          stroke-width="3"
+          fill="yellow"
+        />
+        <polygon
+          id="miss2"
+          points="142,86 142,175 149,175 149,86 "
+          style="fill:yellow;stroke:black;stroke-width: 1;"
+        />
+        <polygon
+          id="miss3"
+          points="142,95 112,140 118,143 142,105 "
+          style="fill:yellow;stroke:black;stroke-width: 1;"
+        />
+        <polygon
+          id="miss4"
+          points="149,95 180,138 174,141 149,105 "
+          style="fill:yellow;stroke:black;stroke-width: 1;"
+        />
+        <polygon
+          id="miss5"
+          points="142,175 116,241 112,238 142,150 "
+          style="fill:yellow;stroke:black;stroke-width: 1;"
+        />
+        <polygon
+          id="miss6"
+          points="149,175 177,241 181,238 149,150 "
+          style="fill:yellow;stroke:black;stroke-width: 1;"
+        />
+      </svg>
+    </section>
+ <script type="text/javascript" src="hangman.js"></script>
+  </body>
+</html>
